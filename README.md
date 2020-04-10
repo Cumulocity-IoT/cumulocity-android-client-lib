@@ -9,7 +9,7 @@ You can download the .aar library as follows
 
 [<img src="./assets/direct-apk-download.png"
       alt="Direct apk download"
-      height="80">](https://github.com/johnpcarter/cumulocity-android-client-lib/releases/jc-cumulocity-release-1.0.aar)
+      height="80">](https://github.com/johnpcarter/cumulocity-android-client-lib/raw/master/releases/jc-cumulocity-release-1.0.aar)
 
 In Android Studio, from the File Menu -> New -> New Module -> Import .JAR/.AAR Package
 
@@ -46,7 +46,7 @@ CumulocityConnectionFactory.connection(<tenant>, <instance e.g. cumulocity.com>)
 
 ## Documentation
 
-Detailed documentation is available <a href="https://github.com/johnpcarter/cumulocity-android-client-lib/docs/dokka/index.html">here</a>
+Detailed documentation is available <a href="https://raw.githack.com/johnpcarter/cumulocity-android-client-lib/master/docs/dokka/index.html">here</a>
 
 -----
 
