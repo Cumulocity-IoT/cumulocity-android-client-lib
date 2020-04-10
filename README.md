@@ -1,7 +1,5 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# cumulocityr <img src='man/figures/logo.png' align="right" height="138" />
+# Android Cumulocity Client Library
 
 <!-- badges: start -->
 
@@ -19,14 +17,17 @@ You can download the .aar library as follows
 
 [<img src="./assets/direct-apk-download.png"
       alt="Direct apk download"
-      height="80">](https://github.com/johnpcarter/cumulocity-android-client-lib/cumulocity_apiservices/build/outputs/aar/jc-cumulocity-release-latest.aar)
+      height="80">](https://github.com/johnpcarter/cumulocity-android-client-lib/releases/jc-cumulocity-release-1.0.aar)
 
+In Android Studio, from the File Menu -> New -> New Module -> Import .JAR/.AAR Package
+
+Then select the .aar file that you have downloaded and that's it
 
 If you want to download the source code to build the library yourself
 
 ``` sh
 
-$ git clone https://github.com/johnpcarter/cumulocity-android-client-lib
+$ git clone https://github.com/johnpcarter/cumulocity-android-client-lib.git
 
 ```
 
@@ -53,7 +54,7 @@ CumulocityConnectionFactory.connection(<tenant>, <instance e.g. cumulocity.com>)
 
 ## Documentation
 
-Detailed documentation is available <a href="https://github.com/johnpcarter/cumulocity-android-client-lib/cumulocity_apiservices/build/dokka/-cumulocity\ -a-p-i\ -services/index.html">here</a>
+Detailed documentation is available <a href="https://github.com/johnpcarter/cumulocity-android-client-lib/docs/dokka/index.html">here</a>
 
 -----
 
