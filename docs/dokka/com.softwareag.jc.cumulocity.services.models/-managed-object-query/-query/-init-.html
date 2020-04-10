@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ManagedObjectQuery.Query.<init> - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../../index.html">com.softwareag.jc.cumulocity.services.models</a>&nbsp;/&nbsp;<a href="../index.html">ManagedObjectQuery</a>&nbsp;/&nbsp;<a href="index.html">Query</a>&nbsp;/&nbsp;<a href="./-init-.html">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery.Query$&lt;init&gt;(kotlin.String, com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery.Operator, kotlin.String)"></a>
+<code><span class="identifier">Query</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery.Query$<init>(kotlin.String, com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery.Operator, kotlin.String)/key">key</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery.Query$<init>(kotlin.String, com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery.Operator, kotlin.String)/operator">operator</span><span class="symbol">:</span>&nbsp;<a href="../-operator/index.html"><span class="identifier">ManagedObjectQuery.Operator</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery.Query$<init>(kotlin.String, com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery.Operator, kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code>
+<p>Represents an individual query to be applied, consisting of a key (left hand), an operator
+and a value (right hand).
+If the operator is blank, then the key is assumed to be a function e.g.</p>
+<pre><code>val q = Query("bygroupid", null, "12345")
+Log.i("example", "${q.toString()}")
+</code></pre>
+<p>would output
+    example - bygroupd(12345)</p>
+</BODY>
+</HTML>

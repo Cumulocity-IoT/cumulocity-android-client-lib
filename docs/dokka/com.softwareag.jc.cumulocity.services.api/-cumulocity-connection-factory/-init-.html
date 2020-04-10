@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CumulocityConnectionFactory.<init> - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.api</a>&nbsp;/&nbsp;<a href="index.html">CumulocityConnectionFactory</a>&nbsp;/&nbsp;<a href="./-init-.html">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory$&lt;init&gt;()"></a>
+<code><span class="identifier">CumulocityConnectionFactory</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Establish your connection instances to Cumulocity through this class.</p>
+<p>e.g.</p>
+<pre><code class="lang-kotlin">CumulocityConnectionFactory.connection(&lt;tenant&gt;, &lt;instance e.g. cumulocity.com&gt;).connect(&lt;user&gt;, &lt;password&gt;) { connection, responseInfo -&gt;
+
+    if (conn.isConnected) {
+
+        Log.i("success", "Hello ${conn.userProfile().firstName}, ${conn.userProfile().lastName}")
+
+        ManagedObjectService(connection).get("12345") { result -&gt;
+
+            if (status == 500) {
+
+                val failureReason: String? = results.reason
+                ...
+
+            } else {
+
+                val device: ManagedObject = results.content
+                ...
+
+            }
+        }
+    } else {
+
+        Log.e("error", "Login Refused - ${conn.failureReason}")
+   }
+}
+</code></pre>
+<p>The connection can be reused without having to re-authenticate if required.</p>
+</BODY>
+</HTML>

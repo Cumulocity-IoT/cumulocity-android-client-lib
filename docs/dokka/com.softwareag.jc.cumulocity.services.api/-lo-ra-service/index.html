@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LoRaService - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.api</a>&nbsp;/&nbsp;<a href="./index.html">LoRaService</a><br/>
+<br/>
+<h1>LoRaService</h1>
+<code><span class="keyword">class </span><span class="identifier">LoRaService</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConnectionRequest</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Custom class to leverage LoRa agent developed by Cyril Poder - cyril.poder@softwarag.com</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-lo-ra-device-activation/index.html">LoRaDeviceActivation</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">LoRaDeviceActivation</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">LoRaService</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$<init>(com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory.CumulocityConnection)/connection">connection</span><span class="symbol">:</span>&nbsp;<a href="../-cumulocity-connection-factory/-cumulocity-connection/index.html"><span class="identifier">CumulocityConnectionFactory.CumulocityConnection</span></a><span class="symbol">)</span></code>
+<p>Custom class to leverage LoRa agent developed by Cyril Poder - cyril.poder@softwarag.com</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="deprovision.html">deprovision</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">deprovision</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$deprovision(kotlin.String, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)))/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$deprovision(kotlin.String, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)))/network">network</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$deprovision(kotlin.String, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Unregisters the device from the specified LoRa networt</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="path.html">path</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">path</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="provision.html">provision</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">provision</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$provision(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Function1((kotlin.Boolean, kotlin.Unit)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$provision(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Function1((kotlin.Boolean, kotlin.Unit)))/network">network</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$provision(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Function1((kotlin.Boolean, kotlin.Unit)))/devEUI">devEUI</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$provision(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Function1((kotlin.Boolean, kotlin.Unit)))/codec">codec</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$provision(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Function1((kotlin.Boolean, kotlin.Unit)))/appKey">appKey</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$provision(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Function1((kotlin.Boolean, kotlin.Unit)))/appEUI">appEUI</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$provision(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Function1((kotlin.Boolean, kotlin.Unit)))/lat">lat</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$provision(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Function1((kotlin.Boolean, kotlin.Unit)))/lng">lng</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$provision(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Function1((kotlin.Boolean, kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Deploys the device to the specified LoRa network</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="response.html">response</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">response</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.LoRaService$response(kotlin.String)/response">response</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

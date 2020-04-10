@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ManagedObjectService - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.api</a>&nbsp;/&nbsp;<a href="./index.html">ManagedObjectService</a><br/>
+<br/>
+<h1>ManagedObjectService</h1>
+<code><span class="keyword">class </span><span class="identifier">ManagedObjectService</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConnectionRequest</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">,</span>&nbsp;<a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span></code>
+<p>Principal access point for all Cumulocity data represented as <a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html">ManagedObject</a> and accessed via
+API endpoint /inventory/managedObjects.</p>
+<p>You will need to use either the internal id of the managed object or reference it via an external
+id that that has been pre-registered. The result is translated into a <a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html">ManagedObject</a> instance</p>
+<p>e.g.</p>
+<pre><code class="lang-kotlin">CumulocityConnectionFactory.connection(&lt;tenant&gt;, &lt;instance e.g. cumulocity.com&gt;).connect(&lt;user&gt;, &lt;password&gt;) { connection, responseInfo -&gt;
+
+    ManagedObjectService(connection).get("12345") { result -&gt;
+
+        if (status == 500) {
+
+            val failureReason: String? = results.reason
+            ...
+
+        } else {
+
+            val device: ManagedObject = results.content
+            ...
+
+        }
+   }
+}
+</code></pre>
+<p>The results instance consists of the following properties</p>
+<p><strong>status</strong> - HTTP response code</p>
+<p><strong>message</strong> - HTTP response message, most often null unless the request failed</p>
+<p><strong>headers</strong> - HTTP response headers</p>
+<p><strong>type</strong> - ManagedObject</p>
+<p><strong>content</strong> - an instance of <a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html">ManagedObject</a>.</p>
+<p>Use the <a href="#">ManagedObjectsService managedObjectsForQuery</a> method if you do need to find the managed
+object via any other criteria.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ManagedObjectService</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$<init>(com.softwareag.jc.common.api.Connection((com.softwareag.jc.cumulocity.services.models.User)))/connection">connection</span><span class="symbol">:</span>&nbsp;<span class="identifier">Connection</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Creates a single use instance that can be used to launch a query, do not reuse the same
+instance for multiple queries</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add.html">add</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$add(com.softwareag.jc.cumulocity.services.models.ManagedObject, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/obj">obj</span><span class="symbol">:</span>&nbsp;<a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$add(com.softwareag.jc.cumulocity.services.models.ManagedObject, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds the managed object to your cumulocity tenant. The internal id generated by Cumulocity will
+added to the managed object reference, which will be referenced in the callback function.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="assign-to-group.html">assignToGroup</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">assignToGroup</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$assignToGroup(kotlin.String, kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/child">child</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$assignToGroup(kotlin.String, kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/parentId">parentId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$assignToGroup(kotlin.String, kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Associates the given managed object withe the other. This is most often used to add
+a device 'c8y_Device' to a group 'c8y_DeviceGroup'</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="delete.html">delete</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$delete(com.softwareag.jc.cumulocity.services.models.ManagedObject, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/obj">obj</span><span class="symbol">:</span>&nbsp;<a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$delete(com.softwareag.jc.cumulocity.services.models.ManagedObject, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Deletes the given managed object</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get.html">get</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$get(kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$get(kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Fetch the managed object using the cumulocity internal id</p>
+<code><span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$get(kotlin.String, kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$get(kotlin.String, kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$get(kotlin.String, kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Fetch the managed object using the external id for the given type. Refer to the Device Management
+console in cumulocity to find the details on an assets external ids and types.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="path.html">path</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">path</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="response.html">response</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">response</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$response(kotlin.String)/response">response</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="update.html">update</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$update(com.softwareag.jc.cumulocity.services.models.ManagedObject, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/obj">obj</span><span class="symbol">:</span>&nbsp;<a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$update(com.softwareag.jc.cumulocity.services.models.ManagedObject, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Updates the existing managed object. The id attribute must be provided in advance, it is
+recommended that you only use this method with a managed object that was returned by the
+aforementioned <a href="add.html">add</a> method, <a href="get.html">get</a> or query methods provided by the <a href="../-managed-objects-service/index.html">ManagedObjectsService</a> class.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

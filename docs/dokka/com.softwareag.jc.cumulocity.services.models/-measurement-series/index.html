@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MeasurementSeries - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.models</a>&nbsp;/&nbsp;<a href="./index.html">MeasurementSeries</a><br/>
+<br/>
+<h1>MeasurementSeries</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">MeasurementSeries</span></code>
+<p>Represents a series of measurements captured over a period of time that can be queried, created and deleted</p>
+<p>Formal definition is given in <a href="https://cumulocity.com/guides/reference/measurements/">Cumulocity REST API Guide</a></p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-value/index.html">Value</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Value</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MeasurementSeries</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementSeries$<init>(org.json.JSONObject)/o">o</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">)</span></code><code><span class="identifier">MeasurementSeries</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementSeries$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.MeasurementSeries.Value)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementSeries$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.MeasurementSeries.Value)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementSeries$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.MeasurementSeries.Value)))/unit">unit</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementSeries$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.MeasurementSeries.Value)))/values">values</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="-value/index.html"><span class="identifier">MeasurementSeries.Value</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Represents a series of measurements captured over a period of time that can be queried, created and deleted</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="name.html">name</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">name</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="type.html">type</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">type</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="unit.html">unit</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">unit</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="values.html">values</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">values</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="-value/index.html"><span class="identifier">MeasurementSeries.Value</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="_capture-series.html">_captureSeries</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">_captureSeries</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementSeries.Companion$_captureSeries(org.json.JSONObject, kotlin.String)/o">o</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementSeries.Companion$_captureSeries(org.json.JSONObject, kotlin.String)/label">label</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="_capture-values.html">_captureValues</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">_captureValues</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementSeries.Companion$_captureValues(org.json.JSONObject)/o">o</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="-value/index.html"><span class="identifier">MeasurementSeries.Value</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

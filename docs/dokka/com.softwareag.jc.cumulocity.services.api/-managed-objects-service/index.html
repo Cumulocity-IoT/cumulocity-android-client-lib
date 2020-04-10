@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ManagedObjectsService - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.api</a>&nbsp;/&nbsp;<a href="./index.html">ManagedObjectsService</a><br/>
+<br/>
+<h1>ManagedObjectsService</h1>
+<code><span class="keyword">class </span><span class="identifier">ManagedObjectsService</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConnectionRequest</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Principal access point for all Cumulocity data represented as <a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html">ManagedObject</a>s such as devices
+and groups and implemented through the API endpoint /inventory/managedObjects.</p>
+<p>It translates the response content into a list of <a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html">ManagedObject</a> instances to simplify usage</p>
+<p>e.g.</p>
+<pre><code class="lang-kotlin">CumulocityConnectionFactory.connection(&lt;tenant&gt;, &lt;instance e.g. cumulocity.com&gt;).connect(&lt;user&gt;, &lt;password&gt;) { connection, responseInfo -&gt;
+
+    ManagedObjectsService(connection).managedObjectsForType(0, "c8y_DeviceGroup") { results -&gt;
+
+        val status: Int = results.status
+
+        val failureReason: String? = if (status == 500)
+            results.reason
+        else
+            null
+
+        val objects: List&lt;ManagedObject&gt; = results.content
+    }
+}
+</code></pre>
+<p>The results instance consists of the following properties</p>
+<p><strong>status</strong> - HTTP response code</p>
+<p><strong>message</strong> - HTTP response message, most often null unless the request failed</p>
+<p><strong>headers</strong> - HTTP response headers</p>
+<p><strong>type</strong> - Indicates the content type that was returned</p>
+<p><strong>content</strong> - Optional content provided by Cumulocity and will be a list of 0 or <a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html">ManagedObject</a> objects.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ManagedObjectsService</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$<init>(com.softwareag.jc.common.api.Connection((com.softwareag.jc.cumulocity.services.models.User)))/connection">connection</span><span class="symbol">:</span>&nbsp;<span class="identifier">Connection</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>Creates a single use instance that cab be used to launch a query, do not reuse the same
+instance for multiple queries</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="connection.html">connection</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">connection</span><span class="symbol">: </span><span class="identifier">Connection</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">&gt;</span></code>
+<p>Connection referencing cumulocity tenant, instance and credentials to use</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="last-page.html">lastPage</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">lastPage</span><span class="symbol">: </span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-objects/index.html"><span class="identifier">ManagedObjects</span></a><span class="symbol">?</span></code>
+<p>Allows the last query results to be retrieved without having to resubmit the query</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="page-size.html">pageSize</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">pageSize</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>default is 50, ensures large queries can be broken down into separate requests via paged
+results. Each request will limited by this value and the request will have to be repeated along
+with incrementing the pageNum attribute.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="all-managed-object.html">allManagedObject</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">allManagedObject</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$allManagedObject(kotlin.Int, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ManagedObject)))), kotlin.Unit)))/pageNum">pageNum</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$allManagedObject(kotlin.Int, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ManagedObject)))), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Returns all managed objects for the given page with the page size specified by the <a href="page-size.html">pageSize</a>
+property of your instance. Invoke this method for successive page whilst incrementing the pageNum
+You will get a empty list once you go past the last page.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="managed-objects-for-query.html">managedObjectsForQuery</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">managedObjectsForQuery</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$managedObjectsForQuery(kotlin.Int, com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ManagedObject)))), kotlin.Unit)))/pageNum">pageNum</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$managedObjectsForQuery(kotlin.Int, com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ManagedObject)))), kotlin.Unit)))/query">query</span><span class="symbol">:</span>&nbsp;<a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object-query/index.html"><span class="identifier">ManagedObjectQuery</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$managedObjectsForQuery(kotlin.Int, com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ManagedObject)))), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Returns all managed objects for the given page and queries with the page size specified by the @see pageSize
+property of your instance. Invoke this method for each successive page whilst incrementing the pageNum
+You will get a empty list once you go past the last page.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="managed-objects-for-type.html">managedObjectsForType</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">managedObjectsForType</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$managedObjectsForType(kotlin.Int, kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ManagedObject)))), kotlin.Unit)))/pageNum">pageNum</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$managedObjectsForType(kotlin.Int, kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ManagedObject)))), kotlin.Unit)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$managedObjectsForType(kotlin.Int, kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ManagedObject)))), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Returns all managed objects for the given page and type with the page size specified by the @see pageSize
+property of your instance. Invoke this method for each successive page whilst incrementing the pageNum
+You will get a empty list once you go past the last page.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="path.html">path</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">path</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="response.html">response</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">response</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$response(kotlin.String)/response">response</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

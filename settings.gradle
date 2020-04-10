@@ -1,0 +1,3 @@
+rootProject.name='Cumulocity Access'
+
+include ':cumulocity_apiservices', ':jc_common'

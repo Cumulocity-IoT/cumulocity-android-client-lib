@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CumulocityConnectionFactory.CumulocityConnection - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../../index.html">com.softwareag.jc.cumulocity.services.api</a>&nbsp;/&nbsp;<a href="../index.html">CumulocityConnectionFactory</a>&nbsp;/&nbsp;<a href="./index.html">CumulocityConnection</a><br/>
+<br/>
+<h1>CumulocityConnection</h1>
+<code><span class="keyword">interface </span><span class="identifier">CumulocityConnection</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Connection</span><span class="symbol">&lt;</span><a href="../../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">&gt;</span></code>
+<p>Represents a connection. Call the connect() method to test and/or retrieve the <a href="../../../com.softwareag.jc.cumulocity.services.models/-user/index.html">User</a> profile
+of the cumulocity account associated with given credentials. The implementation of this interface
+is returned via the <a href="#">CumulocityConnectionFactory connection</a> method.</p>
+<p>The connection object can then be used instantiate the API Services to interrogate Cumulocity</p>
+<h3>Parameters</h3>
+<p><a name="endPoint"></a>
+<code>endPoint</code> - The endpoint that will be used to connect to your cumulocity tenant minus the resource path</p>
+<p><a name="isConnected"></a>
+<code>isConnected</code> - : Boolean result of call to connect() method</p>
+<p><a name="failureReason"></a>
+<code>failureReason</code> - : String? If is isConnected is false this might give you an idea of why</p>
+<p><a name="credentials"></a>
+<code>credentials</code> - : Credentials the user/password used in the call to connect()</p>
+<p><a name="headers"></a>
+<code>headers</code> - : Map&lt;String, String&gt; The headers returned by the call to connect()</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="connect.html">connect</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">connect</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory.CumulocityConnection$connect(kotlin.String, kotlin.String, kotlin.Function2((com.softwareag.jc.common.api.Connection((com.softwareag.jc.cumulocity.services.models.User)), com.softwareag.jc.common.api.Response(()), kotlin.Unit)))/user">user</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory.CumulocityConnection$connect(kotlin.String, kotlin.String, kotlin.Function2((com.softwareag.jc.common.api.Connection((com.softwareag.jc.cumulocity.services.models.User)), com.softwareag.jc.common.api.Response(()), kotlin.Unit)))/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory.CumulocityConnection$connect(kotlin.String, kotlin.String, kotlin.Function2((com.softwareag.jc.common.api.Connection((com.softwareag.jc.cumulocity.services.models.User)), com.softwareag.jc.common.api.Response(()), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">OnConnectionResult</span><span class="symbol">&lt;</span><a href="../../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">AsyncTask</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code>
+<p>Verifies connection with Cumulocity and calls the callback function with the results
+The connection given in the callback should be the one used when using the Cumulocity services
+to retrieve/update assets.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="user-profile.html">userProfile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">userProfile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">?</span></code>
+<p>User profile returned by Cumulocity for the given connection</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

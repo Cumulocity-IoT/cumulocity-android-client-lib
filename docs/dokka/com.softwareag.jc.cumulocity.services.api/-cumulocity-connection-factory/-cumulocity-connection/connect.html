@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CumulocityConnectionFactory.CumulocityConnection.connect - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../../index.html">com.softwareag.jc.cumulocity.services.api</a>&nbsp;/&nbsp;<a href="../index.html">CumulocityConnectionFactory</a>&nbsp;/&nbsp;<a href="index.html">CumulocityConnection</a>&nbsp;/&nbsp;<a href="./connect.html">connect</a><br/>
+<br/>
+<h1>connect</h1>
+<a name="com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory.CumulocityConnection$connect(kotlin.String, kotlin.String, kotlin.Function2((com.softwareag.jc.common.api.Connection((com.softwareag.jc.cumulocity.services.models.User)), com.softwareag.jc.common.api.Response(()), kotlin.Unit)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">connect</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory.CumulocityConnection$connect(kotlin.String, kotlin.String, kotlin.Function2((com.softwareag.jc.common.api.Connection((com.softwareag.jc.cumulocity.services.models.User)), com.softwareag.jc.common.api.Response(()), kotlin.Unit)))/user">user</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory.CumulocityConnection$connect(kotlin.String, kotlin.String, kotlin.Function2((com.softwareag.jc.common.api.Connection((com.softwareag.jc.cumulocity.services.models.User)), com.softwareag.jc.common.api.Response(()), kotlin.Unit)))/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory.CumulocityConnection$connect(kotlin.String, kotlin.String, kotlin.Function2((com.softwareag.jc.common.api.Connection((com.softwareag.jc.cumulocity.services.models.User)), com.softwareag.jc.common.api.Response(()), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">OnConnectionResult</span><span class="symbol">&lt;</span><a href="../../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">AsyncTask</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code>
+<p>Verifies connection with Cumulocity and calls the callback function with the results
+The connection given in the callback should be the one used when using the Cumulocity services
+to retrieve/update assets.</p>
+<h3>Parameters</h3>
+<p><a name="user"></a>
+<code>user</code> - user id to authenticate with</p>
+<p><a name="password"></a>
+<code>password</code> - password of the given user</p>
+<p><a name="responder"></a>
+<code>responder</code> - callback function to confirm connection, use this to call any of the
+cumulocity services.</p>
+<p><strong>Return</strong><br/>
+AsynTask the kotlin task where the http request is being called from. Not generally useful
+but allows request to be cancelled if so required.</p>
+</BODY>
+</HTML>

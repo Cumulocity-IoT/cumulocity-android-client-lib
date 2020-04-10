@@ -1,0 +1,168 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Operation - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.models</a>&nbsp;/&nbsp;<a href="./index.html">Operation</a><br/>
+<br/>
+<h1>Operation</h1>
+<code><span class="keyword">class </span><span class="identifier">Operation</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Represents a Cumulocity operation to be executed or that has been executed on a device</p>
+<p>Formal definition is given in <a href="https://cumulocity.com/guides/reference/device-control/#operation">Cumulocity REST API Guide</a></p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-operation-details/index.html">OperationDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">OperationDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-status/index.html">Status</a></p>
+</td>
+<td>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">Status</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Operation</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Operation$<init>(org.json.JSONObject)/o">o</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">)</span></code><code><span class="identifier">Operation</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Operation$<init>(kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Operation.OperationDetails)/deviceId">deviceId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Operation$<init>(kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Operation.OperationDetails)/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Operation$<init>(kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Operation.OperationDetails)/operationDetails">operationDetails</span><span class="symbol">:</span>&nbsp;<a href="-operation-details/index.html"><span class="identifier">Operation.OperationDetails</span></a><span class="symbol">)</span></code>
+<p>Create a new operation associated with given device via its <a href="../-managed-object/index.html">ManagedObject</a> id</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="_failure-reason.html">_failureReason</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">_failureReason</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="_status.html">_status</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">_status</span><span class="symbol">: </span><a href="-status/index.html"><span class="identifier">Operation.Status</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="bulk-operation-id.html">bulkOperationId</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">bulkOperationId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="creation-time.html">creationTime</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">creationTime</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="device-external-i-ds.html">deviceExternalIDs</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">deviceExternalIDs</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../-external-id/index.html"><span class="identifier">ExternalId</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="device-id.html">deviceId</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">deviceId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="failure-reason.html">failureReason</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">failureReason</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="id.html">id</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">id</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="operation-details.html">operationDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">operationDetails</span><span class="symbol">: </span><a href="-operation-details/index.html"><span class="identifier">Operation.OperationDetails</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="status.html">status</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">status</span><span class="symbol">: </span><a href="-status/index.html"><span class="identifier">Operation.Status</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="type.html">type</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">type</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="flag-failed.html">flagFailed</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">flagFailed</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Operation$flagFailed(kotlin.String)/reason">reason</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-j-s-o-n-string.html">toJSONString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toJSONString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="details.html">details</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">details</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Operation.Companion$details(org.json.JSONObject)/o">o</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">)</span><span class="symbol">: </span><a href="-operation-details/index.html"><span class="identifier">Operation.OperationDetails</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="operation-type.html">operationType</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">operationType</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Operation.Companion$operationType(org.json.JSONObject)/o">o</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PropertiesBase.<init> - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.models.extension</a>&nbsp;/&nbsp;<a href="index.html">PropertiesBase</a>&nbsp;/&nbsp;<a href="./-init-.html">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="com.softwareag.jc.cumulocity.services.models.extension.PropertiesBase$&lt;init&gt;(org.json.JSONObject, kotlin.Boolean)"></a>
+<code><span class="identifier">PropertiesBase</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.extension.PropertiesBase$<init>(org.json.JSONObject, kotlin.Boolean)/json">json</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.extension.PropertiesBase$<init>(org.json.JSONObject, kotlin.Boolean)/excludeTopLevel">excludeTopLevel</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span></code>
+<p>Manages custom attributes found in <a href="#">ManageObject</a> and allows them to be referenced via a properties
+map keyed by the name of the found custom attribute
+e.g.</p>
+<pre><code>{
+     ...
+     "xSimple_custom_attribute": "12345",
+     "complex_custom_attribute: {
+         "name": "test",
+         "value": {
+             "label": "Can be nested too!"
+             }
+         }
+     }
+     ...
+}
+</code></pre>
+<p>becomes</p>
+<pre><code>properties["xSimple_custom_attribute"] = "12345"
+properties["complex_custom_attribute.name"] = "test"
+properties["complex_custom_attribute.value.label"] = "Can be nested too!"
+</code></pre>
+<p>You can create your own custom classes and register them here if your structures are too complex
+to be easily managed as above
+e.g.</p>
+<pre><code>PropertiesBase.registerCustomAttributeClass("complex_custom_attribute", "your.package.class")
+
+val myCustomAttrib: &lt;class&gt; = properties["complex_custom_attribute"] as &lt;class&gt;
+</code></pre>
+<p>Your class will need to provide a constructor that takes a single JSON object as input, with JSON
+object being the root element representing the custom structure. Your constructor can then decide
+how to decompose the values in the structure and what properties to expose and how.
+e.g.</p>
+<pre><code>class MyCustomAttribClass(o: JSONObject): JsonSerializable {
+
+ val name: String?
+
+ init {
+     name = o.getString("name")
+     ...
+ }
+ ...
+ /**
+ Only required if you want to send this custom attribute for update when sending ManagedObjects
+ to Cumulocity
+ */
+ override fun toJSONString(): String {
+     return JsonSerializable.toJSONString(this)
+ }
+}
+</code></pre>
+<p>You can also group simple custom attributes together via your own custom classes by prefixing them
+with the name of the custom label
+e.g.</p>
+<pre><code>{
+ ...
+     "xPlanningDate": "11-12-20",
+     "xPlanningInfo": "this is a test"
+ ...
+ }
+</code></pre>
+<p>could be processed as</p>
+<pre><code>PropertiesBase.registerCustomAttributeClass("xPlanning", "your.package.class")
+
+val myCustomAttrib: &lt;class&gt; = properties["xPlanning"] as &lt;class&gt;
+</code></pre>
+<p>As above your class needs to provide a constructor to take the JSONObject, however in this case
+it will be provided with the JSON root node containing the first attribute starting with "xPlanning"...
+Your constructor will then have to extract the relevant attributes and assign them to the appropriate
+properties such as date() and info()</p>
+</BODY>
+</HTML>

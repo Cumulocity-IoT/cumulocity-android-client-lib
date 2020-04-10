@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>OperationService - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.api</a>&nbsp;/&nbsp;<a href="./index.html">OperationService</a><br/>
+<br/>
+<h1>OperationService</h1>
+<code><span class="keyword">class </span><span class="identifier">OperationService</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConnectionRequest</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">,</span>&nbsp;<a href="../../com.softwareag.jc.cumulocity.services.models/-operation/index.html"><span class="identifier">Operation</span></a><span class="symbol">&gt;</span></code>
+<p>Access point for posting operations to remote assets via Cumulocity</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">OperationService</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.OperationService$<init>(com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory.CumulocityConnection)/connection">connection</span><span class="symbol">:</span>&nbsp;<a href="../-cumulocity-connection-factory/-cumulocity-connection/index.html"><span class="identifier">CumulocityConnectionFactory.CumulocityConnection</span></a><span class="symbol">)</span></code>
+<p>Creates a single use instance that cab be used to launch a query, do not reuse the same
+instance for multiple queries</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="connection.html">connection</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">connection</span><span class="symbol">: </span><a href="../-cumulocity-connection-factory/-cumulocity-connection/index.html"><span class="identifier">CumulocityConnectionFactory.CumulocityConnection</span></a></code>
+<p>Connection referencing cumulocity tenant, instance and credentials to use</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="version.html">version</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">version</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="path.html">path</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">path</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="post.html">post</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">post</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.OperationService$post(com.softwareag.jc.cumulocity.services.models.Operation, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.Operation)), kotlin.Unit)))/operation">operation</span><span class="symbol">:</span>&nbsp;<a href="../../com.softwareag.jc.cumulocity.services.models/-operation/index.html"><span class="identifier">Operation</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.OperationService$post(com.softwareag.jc.cumulocity.services.models.Operation, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.Operation)), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">Response</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-operation/index.html"><span class="identifier">Operation</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Submits an operation to Cumulocity to be run on the targetted device refereneced in the managed
+object</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="response.html">response</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">response</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.OperationService$response(kotlin.String)/response">response</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../com.softwareag.jc.cumulocity.services.models/-operation/index.html"><span class="identifier">Operation</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MeasurementSeriesService - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.api</a>&nbsp;/&nbsp;<a href="./index.html">MeasurementSeriesService</a><br/>
+<br/>
+<h1>MeasurementSeriesService</h1>
+<code><span class="keyword">class </span><span class="identifier">MeasurementSeriesService</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConnectionRequest</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">,</span>&nbsp;<a href="../../com.softwareag.jc.cumulocity.services.models/-measurement-series/index.html"><span class="identifier">MeasurementSeries</span></a><span class="symbol">&gt;</span></code>
+<p>Access point for retrieving measurements collected over a period of time from Cumulocity, data represented as
+<a href="../../com.softwareag.jc.cumulocity.services.models/-measurement-series/index.html">MeasurementSeries</a> and accessed via API endpoint /measurement/measurements/series</p>
+<p>Measurements series are collated differently to measurements, the advantage being that the format
+is more compact and easier to represent than <a href="../../com.softwareag.jc.cumulocity.services.models/-measurement/index.html">Measurement</a>. However you need to know the full
+namespace of the measurement series to retrieve in advance</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MeasurementSeriesService</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.MeasurementSeriesService$<init>(com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory.CumulocityConnection)/connection">connection</span><span class="symbol">:</span>&nbsp;<a href="../-cumulocity-connection-factory/-cumulocity-connection/index.html"><span class="identifier">CumulocityConnectionFactory.CumulocityConnection</span></a><span class="symbol">)</span></code>
+<p>Creates a single use instance that cab be used to launch a query, do not reuse the same
+instance for multiple queries</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="connection.html">connection</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">connection</span><span class="symbol">: </span><a href="../-cumulocity-connection-factory/-cumulocity-connection/index.html"><span class="identifier">CumulocityConnectionFactory.CumulocityConnection</span></a></code>
+<p>Connection referencing cumulocity tenant, instance and credentials to use</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get.html">get</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.MeasurementSeriesService$get(kotlin.String, kotlin.String, java.util.Date, java.util.Date, com.softwareag.jc.cumulocity.services.api.MeasurementsService.AggregateType, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.MeasurementSeries)), kotlin.Unit)))/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.MeasurementSeriesService$get(kotlin.String, kotlin.String, java.util.Date, java.util.Date, com.softwareag.jc.cumulocity.services.api.MeasurementsService.AggregateType, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.MeasurementSeries)), kotlin.Unit)))/series">series</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.MeasurementSeriesService$get(kotlin.String, kotlin.String, java.util.Date, java.util.Date, com.softwareag.jc.cumulocity.services.api.MeasurementsService.AggregateType, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.MeasurementSeries)), kotlin.Unit)))/from">from</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.MeasurementSeriesService$get(kotlin.String, kotlin.String, java.util.Date, java.util.Date, com.softwareag.jc.cumulocity.services.api.MeasurementsService.AggregateType, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.MeasurementSeries)), kotlin.Unit)))/to">to</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.MeasurementSeriesService$get(kotlin.String, kotlin.String, java.util.Date, java.util.Date, com.softwareag.jc.cumulocity.services.api.MeasurementsService.AggregateType, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.MeasurementSeries)), kotlin.Unit)))/aggregrationType">aggregrationType</span><span class="symbol">:</span>&nbsp;<a href="../-measurements-service/-aggregate-type/index.html"><span class="identifier">MeasurementsService.AggregateType</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.MeasurementSeriesService$get(kotlin.String, kotlin.String, java.util.Date, java.util.Date, com.softwareag.jc.cumulocity.services.api.MeasurementsService.AggregateType, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.MeasurementSeries)), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-measurement-series/index.html"><span class="identifier">MeasurementSeries</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Returns a list of <a href="../../com.softwareag.jc.cumulocity.services.models/-measurement/index.html">Measurement</a> generated by the asset for the given id parameter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="path.html">path</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">path</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="response.html">response</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">response</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.MeasurementSeriesService$response(kotlin.String)/response">response</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../com.softwareag.jc.cumulocity.services.models/-measurement-series/index.html"><span class="identifier">MeasurementSeries</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

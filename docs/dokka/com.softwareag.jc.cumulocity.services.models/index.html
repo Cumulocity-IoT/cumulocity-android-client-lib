@@ -1,0 +1,857 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>com.softwareag.jc.cumulocity.services.models - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="./index.html">com.softwareag.jc.cumulocity.services.models</a><br/>
+<br/>
+<h2>Package com.softwareag.jc.cumulocity.services.models</h2>
+<p>Classes defining the model for all of the cumulocity asset types.</p>
+<p>API Services will provide your callback function with a RequestResponder object representing the API
+response. If the response status attribute is 200.201 then content attribute if set will be either a
+single or list of one of the following types.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-alarm/index.html">Alarm</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Alarm</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Represents an alarm associated with a device.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-alarms/index.html">Alarms</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Alarms</span></code>
+<p>Collection of alarms associated with a <a href="-managed-object/index.html">ManagedObject</a>/device</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-availability/index.html">Availability</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Availability</span></code>
+<p>Represents last status received by Cumulocity of associated device</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-data-points/index.html">DataPoints</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">DataPoints</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Represents a set of DataPoints for a <a href="-managed-object/index.html">ManagedObject</a>, which allows measurements captured by
+Cumulocity to be displayed more intuitively by prefacing them with unit labels, line colors etc.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-event/index.html">Event</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Event</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Represents an event, non measurable activity triggered by or for a device</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-external-id/index.html">ExternalId</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ExternalId</span></code>
+<p>Represents an external id associated with a <a href="-managed-object/index.html">ManagedObject</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-external-ids/index.html">ExternalIds</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ExternalIds</span></code>
+<p>Represents a collection of external id's associated with a single <a href="-managed-object/index.html">ManagedObject</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-firmware/index.html">Firmware</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Firmware</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Firmware of device represented by <a href="-managed-object/index.html">ManagedObject</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-hardware/index.html">Hardware</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Hardware</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../com.softwareag.jc.cumulocity.services.models.extension/-properties-base/index.html"><span class="identifier">PropertiesBase</span></a><span class="symbol">, </span><span class="identifier">JsonSerializable</span></code>
+<p>Collection of properties to identify the device type</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-is-device-type/index.html">IsDeviceType</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">IsDeviceType</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-managed-object/index.html">ManagedObject</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">ManagedObject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../com.softwareag.jc.cumulocity.services.models.extension/-properties-base/index.html"><span class="identifier">PropertiesBase</span></a><span class="symbol">, </span><span class="identifier">JsonSerializable</span></code>
+<p>This is the single most important asset type referenced by Cumulocity. Principally identifies the
+devices to be managed, but can be used to define any required asset type, such as groups, buildings,
+rooms etc. etc.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-managed-object-query/index.html">ManagedObjectQuery</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ManagedObjectQuery</span></code>
+<p>Class representing a set of query arguments to used when using the query method of the <a href="#">ManagedObjectsService</a>
+to fetch <a href="-managed-object/index.html">ManagedObject</a>s.
+Currently all queries have to be true i.e. they are ANDED together</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-managed-objects/index.html">ManagedObjects</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">ManagedObjects</span></code>
+<p>A collection of <a href="-managed-object/index.html">ManagedObject</a>s as returned by one of the methods of <a href="#">ManagedObjectService</a> class</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-measurement/index.html">Measurement</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Measurement</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Represents individual measurements that can be queried, created and deleted</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-measurement-series/index.html">MeasurementSeries</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">MeasurementSeries</span></code>
+<p>Represents a series of measurements captured over a period of time that can be queried, created and deleted</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-measurement-value/index.html">MeasurementValue</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">MeasurementValue</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Individual measurement consisting of a human readable label, its unit of measure and the value</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-operation/index.html">Operation</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Operation</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Represents a Cumulocity operation to be executed or that has been executed on a device</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-position/index.html">Position</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Position</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Represents the GPS coordinated of the device associated with this <a href="-managed-object/index.html">ManagedObject</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-required-availability/index.html">RequiredAvailability</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">RequiredAvailability</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Used by Cumulocity to determine <a href="-availability/index.html">Availability</a>, the status will be assumed to 'UNAVAILABLE'
+if no message or event is received by Cumulocity within the time period (minutes) represented
+by the response interval property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-user/index.html">User</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">User</span></code>
+<p>Represents a Cumulocity user profile
+This attribute becomes available as an attribute of the <a href="#">CumulocityConnection</a> instance
+after successfully calling its connect() method</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-c8-y_-a-l-a-r-m_-s-e-v-e-r-i-t-y.html">C8Y_ALARM_SEVERITY</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_ALARM_SEVERITY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-a-l-a-r-m_-s-o-u-r-c-e.html">C8Y_ALARM_SOURCE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_ALARM_SOURCE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-a-l-a-r-m_-s-o-u-r-c-e_-i-d.html">C8Y_ALARM_SOURCE_ID</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_ALARM_SOURCE_ID</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-a-l-a-r-m_-s-t-a-t-u-s.html">C8Y_ALARM_STATUS</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_ALARM_STATUS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-a-l-a-r-m_-t-e-x-t.html">C8Y_ALARM_TEXT</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_ALARM_TEXT</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-a-l-a-r-m_-t-i-m-e.html">C8Y_ALARM_TIME</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_ALARM_TIME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-a-l-a-r-m_-t-y-p-e.html">C8Y_ALARM_TYPE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_ALARM_TYPE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-e-v-e-n-t_-s-o-u-r-c-e.html">C8Y_EVENT_SOURCE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_EVENT_SOURCE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-e-v-e-n-t_-s-o-u-r-c-e_-i-d.html">C8Y_EVENT_SOURCE_ID</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_EVENT_SOURCE_ID</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-e-v-e-n-t_-t-e-x-t.html">C8Y_EVENT_TEXT</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_EVENT_TEXT</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-e-v-e-n-t_-t-i-m-e.html">C8Y_EVENT_TIME</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_EVENT_TIME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-e-v-e-n-t_-t-y-p-e.html">C8Y_EVENT_TYPE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_EVENT_TYPE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-e-x-t-i-d_-r-e-f.html">C8Y_MANAGED_EXTID_REF</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_EXTID_REF</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-e-x-t-i-d_-t-y-p-e.html">C8Y_MANAGED_EXTID_TYPE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_EXTID_TYPE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-e-x-t-i-d-s_-a-p-i.html">C8Y_MANAGED_EXTIDS_API</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_EXTIDS_API</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-e-x-t-i-d-s_-o-b-j-e-c-t-s.html">C8Y_MANAGED_EXTIDS_OBJECTS</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_EXTIDS_OBJECTS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t.html">C8Y_MANAGED_OBJECT</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-a-l-a-r-m-s.html">C8Y_MANAGED_OBJECT_ALARMS</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_ALARMS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-a-l-a-r-m-s_-c-r-i-t-i-c-a-l.html">C8Y_MANAGED_OBJECT_ALARMS_CRITICAL</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_ALARMS_CRITICAL</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-a-l-a-r-m-s_-m-a-j-o-r.html">C8Y_MANAGED_OBJECT_ALARMS_MAJOR</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_ALARMS_MAJOR</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-a-l-a-r-m-s_-m-i-n-o-r.html">C8Y_MANAGED_OBJECT_ALARMS_MINOR</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_ALARMS_MINOR</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-a-l-a-r-m-s_-w-a-r-n-i-n-g.html">C8Y_MANAGED_OBJECT_ALARMS_WARNING</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_ALARMS_WARNING</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-a-p-i.html">C8Y_MANAGED_OBJECT_API</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_API</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-a-p-p_-i-d.html">C8Y_MANAGED_OBJECT_APP_ID</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_APP_ID</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-a-p-p_-o-w-n-e-r.html">C8Y_MANAGED_OBJECT_APP_OWNER</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_APP_OWNER</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-a-s-s-e-t-s.html">C8Y_MANAGED_OBJECT_ASSETS</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_ASSETS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-a-v-a-i-l-a-b-i-l-i-t-y.html">C8Y_MANAGED_OBJECT_AVAILABILITY</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_AVAILABILITY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-a-v-a-i-l-a-b-i-l-i-t-y_-m-e-s-s-a-g-e.html">C8Y_MANAGED_OBJECT_AVAILABILITY_MESSAGE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_AVAILABILITY_MESSAGE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-a-v-a-i-l-a-b-i-l-i-t-y_-s-t-a-t-u-s.html">C8Y_MANAGED_OBJECT_AVAILABILITY_STATUS</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_AVAILABILITY_STATUS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-c-o-n-n-e-c-t-i-o-n.html">C8Y_MANAGED_OBJECT_CONNECTION</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_CONNECTION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-c-o-n-n-e-c-t-i-o-n_-s-t-a-t-u-s.html">C8Y_MANAGED_OBJECT_CONNECTION_STATUS</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_CONNECTION_STATUS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-c-r-e-a-t-e-d.html">C8Y_MANAGED_OBJECT_CREATED</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_CREATED</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-d-a-t-a_-p-o-i-n-t-s.html">C8Y_MANAGED_OBJECT_DATA_POINTS</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_DATA_POINTS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-d-a-t-a-p-o-i-n-t_-c-o-l-o-r.html">C8Y_MANAGED_OBJECT_DATAPOINT_COLOR</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_DATAPOINT_COLOR</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-d-a-t-a-p-o-i-n-t_-f-r-a-g-m-e-n-t.html">C8Y_MANAGED_OBJECT_DATAPOINT_FRAGMENT</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_DATAPOINT_FRAGMENT</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-d-a-t-a-p-o-i-n-t_-i-d.html">C8Y_MANAGED_OBJECT_DATAPOINT_ID</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_DATAPOINT_ID</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-d-a-t-a-p-o-i-n-t_-l-a-b-e-l.html">C8Y_MANAGED_OBJECT_DATAPOINT_LABEL</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_DATAPOINT_LABEL</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-d-a-t-a-p-o-i-n-t_-l-i-n-e_-t-y-p-e.html">C8Y_MANAGED_OBJECT_DATAPOINT_LINE_TYPE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_DATAPOINT_LINE_TYPE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-d-a-t-a-p-o-i-n-t_-r-e-n-d-e-r_-t-y-p-e.html">C8Y_MANAGED_OBJECT_DATAPOINT_RENDER_TYPE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_DATAPOINT_RENDER_TYPE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-d-a-t-a-p-o-i-n-t_-s-e-r-i-e-s.html">C8Y_MANAGED_OBJECT_DATAPOINT_SERIES</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_DATAPOINT_SERIES</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-d-a-t-a-p-o-i-n-t_-u-n-i-t.html">C8Y_MANAGED_OBJECT_DATAPOINT_UNIT</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_DATAPOINT_UNIT</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-d-e-v-i-c-e-s.html">C8Y_MANAGED_OBJECT_DEVICES</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_DEVICES</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-f-i-r-m-w-a-r-e.html">C8Y_MANAGED_OBJECT_FIRMWARE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_FIRMWARE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-f-i-r-m-w-a-r-e_-v-e-r-s-i-o-n.html">C8Y_MANAGED_OBJECT_FIRMWARE_VERSION</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_FIRMWARE_VERSION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-h-a-r-d-w-a-r-e.html">C8Y_MANAGED_OBJECT_HARDWARE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_HARDWARE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-h-a-r-d-w-a-r-e_-m-o-d-e-l.html">C8Y_MANAGED_OBJECT_HARDWARE_MODEL</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_HARDWARE_MODEL</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-h-a-r-d-w-a-r-e_-s-e-r-i-a-l.html">C8Y_MANAGED_OBJECT_HARDWARE_SERIAL</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_HARDWARE_SERIAL</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-h-a-r-d-w-a-r-e_-s-u-p-p-l-i-e-r.html">C8Y_MANAGED_OBJECT_HARDWARE_SUPPLIER</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_HARDWARE_SUPPLIER</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-i-d.html">C8Y_MANAGED_OBJECT_ID</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_ID</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-l-a-s-t_-u-p-d-a-t-e-d.html">C8Y_MANAGED_OBJECT_LAST_UPDATED</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_LAST_UPDATED</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-l-n-s-t-y-p-e.html">C8Y_MANAGED_OBJECT_LNSTYPE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_LNSTYPE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-l-p-w-a-n_-d-e-v-i-c-e.html">C8Y_MANAGED_OBJECT_LPWAN_DEVICE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_LPWAN_DEVICE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-l-p-w-a-n_-d-e-v-i-c-e_-p-r-o-v-i-s-i-o-n-e-d.html">C8Y_MANAGED_OBJECT_LPWAN_DEVICE_PROVISIONED</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_LPWAN_DEVICE_PROVISIONED</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-n-a-m-e.html">C8Y_MANAGED_OBJECT_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-n-o-t-e-s.html">C8Y_MANAGED_OBJECT_NOTES</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_NOTES</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-o-p-e-r-a-t-i-o-n-s.html">C8Y_MANAGED_OBJECT_OPERATIONS</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_OPERATIONS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-o-w-n-e-r.html">C8Y_MANAGED_OBJECT_OWNER</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_OWNER</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-p-o-s-i-t-i-o-n.html">C8Y_MANAGED_OBJECT_POSITION</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_POSITION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-p-o-s-i-t-i-o-n_-a-l-t.html">C8Y_MANAGED_OBJECT_POSITION_ALT</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_POSITION_ALT</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-p-o-s-i-t-i-o-n_-l-a-t.html">C8Y_MANAGED_OBJECT_POSITION_LAT</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_POSITION_LAT</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-p-o-s-i-t-i-o-n_-l-o-n-g.html">C8Y_MANAGED_OBJECT_POSITION_LONG</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_POSITION_LONG</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-r-e-q_-a-v-a-i-l-a-b-i-l-i-t-y.html">C8Y_MANAGED_OBJECT_REQ_AVAILABILITY</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_REQ_AVAILABILITY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-r-e-q_-a-v-a-i-l-a-b-i-l-i-t-y_-i-n-t-e-r-v-a-l.html">C8Y_MANAGED_OBJECT_REQ_AVAILABILITY_INTERVAL</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_REQ_AVAILABILITY_INTERVAL</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-t-y-p-e.html">C8Y_MANAGED_OBJECT_TYPE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_TYPE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-t-y-p-e_-d-e-t-a-i-l-s.html">C8Y_MANAGED_OBJECT_TYPE_DETAILS</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECT_TYPE_DETAILS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t-s_-a-p-i.html">C8Y_MANAGED_OBJECTS_API</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECTS_API</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t-s_-e-x-t_-a-p-i.html">C8Y_MANAGED_OBJECTS_EXT_API</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECTS_EXT_API</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-a-n-a-g-e-d_-o-b-j-e-c-t-s_-o-b-j-e-c-t-s.html">C8Y_MANAGED_OBJECTS_OBJECTS</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MANAGED_OBJECTS_OBJECTS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-e-s-u-r-e-m-e-n-t_-s-o-u-r-c-e.html">C8Y_MESUREMENT_SOURCE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MESUREMENT_SOURCE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-e-s-u-r-e-m-e-n-t_-s-o-u-r-c-e_-i-d.html">C8Y_MESUREMENT_SOURCE_ID</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MESUREMENT_SOURCE_ID</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-e-s-u-r-e-m-e-n-t_-t-i-m-e.html">C8Y_MESUREMENT_TIME</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MESUREMENT_TIME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-e-s-u-r-e-m-e-n-t_-t-y-p-e.html">C8Y_MESUREMENT_TYPE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MESUREMENT_TYPE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-e-s-u-r-e-m-e-n-t_-v-a-l-u-e_-u-n-i-t.html">C8Y_MESUREMENT_VALUE_UNIT</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MESUREMENT_VALUE_UNIT</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-e-s-u-r-e-m-e-n-t_-v-a-l-u-e_-v-a-l-u-e.html">C8Y_MESUREMENT_VALUE_VALUE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MESUREMENT_VALUE_VALUE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-s-e-r-i-e-s_-s-e-r-i-e-s.html">C8Y_MSERIES_SERIES</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MSERIES_SERIES</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-s-e-r-i-e-s_-s-e-r-i-e-s_-n-a-m-e.html">C8Y_MSERIES_SERIES_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MSERIES_SERIES_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-s-e-r-i-e-s_-s-e-r-i-e-s_-t-y-p-e.html">C8Y_MSERIES_SERIES_TYPE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MSERIES_SERIES_TYPE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-s-e-r-i-e-s_-s-e-r-i-e-s_-u-n-i-t.html">C8Y_MSERIES_SERIES_UNIT</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MSERIES_SERIES_UNIT</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-s-e-r-i-e-s_-v-a-l-u-e-s.html">C8Y_MSERIES_VALUES</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MSERIES_VALUES</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-s-e-r-i-e-s_-v-a-l-u-e-s_-m-a-x.html">C8Y_MSERIES_VALUES_MAX</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MSERIES_VALUES_MAX</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-m-s-e-r-i-e-s_-v-a-l-u-e-s_-m-i-n.html">C8Y_MSERIES_VALUES_MIN</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_MSERIES_VALUES_MIN</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-o-p-e-r-a-t-i-o-n-s_-a-p-i.html">C8Y_OPERATIONS_API</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_OPERATIONS_API</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-o-p-e-r-a-t-i-o-n-s_-d-e-v-i-c-e_-i-d.html">C8Y_OPERATIONS_DEVICE_ID</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_OPERATIONS_DEVICE_ID</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-t-y-p-e_-d-e-v-i-c-e_-t-y-p-e.html">C8Y_TYPE_DEVICE_TYPE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_TYPE_DEVICE_TYPE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c8-y_-u-s-e-r_-a-p-i.html">C8Y_USER_API</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">C8Y_USER_API</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c-y8_-u-s-e-r_-e-m-a-i-l.html">CY8_USER_EMAIL</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">CY8_USER_EMAIL</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c-y8_-u-s-e-r_-f-i-r-s-t_-n-a-m-e.html">CY8_USER_FIRST_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">CY8_USER_FIRST_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c-y8_-u-s-e-r_-i-d.html">CY8_USER_ID</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">CY8_USER_ID</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c-y8_-u-s-e-r_-l-a-s-t_-n-a-m-e.html">CY8_USER_LAST_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">CY8_USER_LAST_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c-y8_-u-s-e-r_-u-n-a-m-e.html">CY8_USER_UNAME</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">CY8_USER_UNAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-c_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-i-s_-v-e-r-i-f-i-e-d.html">JC_MANAGED_OBJECT_IS_VERIFIED</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">JC_MANAGED_OBJECT_IS_VERIFIED</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-c_-m-a-n-a-g-e-d_-o-b-j-e-c-t_-i-s_-v-e-r-i-f-i-e-d_-d-a-t-e.html">JC_MANAGED_OBJECT_IS_VERIFIED_DATE</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">JC_MANAGED_OBJECT_IS_VERIFIED_DATE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

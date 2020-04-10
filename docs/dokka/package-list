@@ -1,0 +1,7 @@
+$dokka.format:html
+$dokka.linkExtension:html
+
+com.softwareag.jc.cumulocity.apiservices
+com.softwareag.jc.cumulocity.services.api
+com.softwareag.jc.cumulocity.services.models
+com.softwareag.jc.cumulocity.services.models.extension

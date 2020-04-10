@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ManagedObjectQuery - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.models</a>&nbsp;/&nbsp;<a href="./index.html">ManagedObjectQuery</a><br/>
+<br/>
+<h1>ManagedObjectQuery</h1>
+<code><span class="keyword">class </span><span class="identifier">ManagedObjectQuery</span></code>
+<p>Class representing a set of query arguments to used when using the query method of the <a href="#">ManagedObjectsService</a>
+to fetch <a href="../-managed-object/index.html">ManagedObject</a>s.
+Currently all queries have to be true i.e. they are ANDED together</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-operator/index.html">Operator</a></p>
+</td>
+<td>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">Operator</span></code>
+<p>Represents the operator to be applied to the value of the query i.e. equals, not equals etc.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-query/index.html">Query</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Query</span></code>
+<p>Represents an individual query to be applied, consisting of a key (left hand), an operator
+and a value (right hand).
+If the operator is blank, then the key is assumed to be a function e.g.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ManagedObjectQuery</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Class representing a set of query arguments to used when using the query method of the <a href="#">ManagedObjectsService</a>
+to fetch <a href="../-managed-object/index.html">ManagedObject</a>s.
+Currently all queries have to be true i.e. they are ANDED together</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add.html">add</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery$add(com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery.Query)/query">query</span><span class="symbol">:</span>&nbsp;<a href="-query/index.html"><span class="identifier">ManagedObjectQuery.Query</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a new query to the existing set</p>
+<code><span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery$add(kotlin.String, com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery.Operator, kotlin.String)/key">key</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery$add(kotlin.String, com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery.Operator, kotlin.String)/operator">operator</span><span class="symbol">:</span>&nbsp;<a href="-operator/index.html"><span class="identifier">ManagedObjectQuery.Operator</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery$add(kotlin.String, com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery.Operator, kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ManagedObjectQuery</span></a></code>
+<p>Adds a new query to the existing set based on the individual values</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="build.html">build</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">build</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

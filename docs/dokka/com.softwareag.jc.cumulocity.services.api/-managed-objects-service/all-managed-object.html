@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ManagedObjectsService.allManagedObject - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.api</a>&nbsp;/&nbsp;<a href="index.html">ManagedObjectsService</a>&nbsp;/&nbsp;<a href="./all-managed-object.html">allManagedObject</a><br/>
+<br/>
+<h1>allManagedObject</h1>
+<a name="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$allManagedObject(kotlin.Int, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ManagedObject)))), kotlin.Unit)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">allManagedObject</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$allManagedObject(kotlin.Int, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ManagedObject)))), kotlin.Unit)))/pageNum">pageNum</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectsService$allManagedObject(kotlin.Int, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ManagedObject)))), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Returns all managed objects for the given page with the page size specified by the <a href="page-size.html">pageSize</a>
+property of your instance. Invoke this method for successive page whilst incrementing the pageNum
+You will get a empty list once you go past the last page.</p>
+<h3>Parameters</h3>
+<p><a name="pageNum"></a>
+<code>pageNum</code> - The page to be fetched</p>
+<p><a name="responder"></a>
+<code>responder</code> - The callback to be invoked for the results, content will be a list of <a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html">ManagedObject</a>s</p>
+</BODY>
+</HTML>

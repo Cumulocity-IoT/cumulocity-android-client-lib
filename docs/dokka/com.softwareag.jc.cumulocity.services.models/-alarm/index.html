@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Alarm - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.models</a>&nbsp;/&nbsp;<a href="./index.html">Alarm</a><br/>
+<br/>
+<h1>Alarm</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Alarm</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Represents an alarm associated with a device.</p>
+<p>Formal definition is given in <a href="https://cumulocity.com/guides/reference/alarms/#alarm">Cumulocity REST API Guide</a></p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-severity/index.html">Severity</a></p>
+</td>
+<td>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">Severity</span></code>
+<p>Allowed values for Alarm Severity</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-source/index.html">Source</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Source</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Wraps id to identify associated device</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-status/index.html">Status</a></p>
+</td>
+<td>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">Status</span></code>
+<p>Allowed values for Alarm Status</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Alarm</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Alarm$<init>(org.json.JSONObject)/o">o</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">)</span></code>
+<p>Alternative constructor used to parse Alarm fetched from Cumulocity.
+NOTE: You do not need to use this method. It is called implicitly when using the <a href="#">AlarmsService get</a> method</p>
+<code><span class="identifier">Alarm</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Alarm$<init>(com.softwareag.jc.cumulocity.services.models.Alarm.Source, kotlin.String, com.softwareag.jc.cumulocity.services.models.Alarm.Status, com.softwareag.jc.cumulocity.services.models.Alarm.Severity, kotlin.String)/source">source</span><span class="symbol">:</span>&nbsp;<a href="-source/index.html"><span class="identifier">Alarm.Source</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Alarm$<init>(com.softwareag.jc.cumulocity.services.models.Alarm.Source, kotlin.String, com.softwareag.jc.cumulocity.services.models.Alarm.Status, com.softwareag.jc.cumulocity.services.models.Alarm.Severity, kotlin.String)/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Alarm$<init>(com.softwareag.jc.cumulocity.services.models.Alarm.Source, kotlin.String, com.softwareag.jc.cumulocity.services.models.Alarm.Status, com.softwareag.jc.cumulocity.services.models.Alarm.Severity, kotlin.String)/status">status</span><span class="symbol">:</span>&nbsp;<a href="-status/index.html"><span class="identifier">Alarm.Status</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Alarm$<init>(com.softwareag.jc.cumulocity.services.models.Alarm.Source, kotlin.String, com.softwareag.jc.cumulocity.services.models.Alarm.Status, com.softwareag.jc.cumulocity.services.models.Alarm.Severity, kotlin.String)/severity">severity</span><span class="symbol">:</span>&nbsp;<a href="-severity/index.html"><span class="identifier">Alarm.Severity</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.Alarm$<init>(com.softwareag.jc.cumulocity.services.models.Alarm.Source, kotlin.String, com.softwareag.jc.cumulocity.services.models.Alarm.Status, com.softwareag.jc.cumulocity.services.models.Alarm.Severity, kotlin.String)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code>
+<p>Create a new alarm to be posted to Cumulocity</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="severity.html">severity</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">severity</span><span class="symbol">: </span><a href="-severity/index.html"><span class="identifier">Alarm.Severity</span></a></code>
+<p>One of Critical, Major, Minor or Warning</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="source.html">source</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">source</span><span class="symbol">: </span><a href="-source/index.html"><span class="identifier">Alarm.Source</span></a></code>
+<p>Identifies the device to which the alarm is associated</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="status.html">status</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">status</span><span class="symbol">: </span><a href="-status/index.html"><span class="identifier">Alarm.Status</span></a></code>
+<p>Identifies if the alarm is active, acknowledged or has been resolved (cleared)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="text.html">text</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">text</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>arbitrary label describing reason for alarm</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="time.html">time</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">time</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code>
+<p>Date time when alarm was raised</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="type.html">type</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">type</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>label identifying the type of alarm</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="to-j-s-o-n-string.html">toJSONString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toJSONString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Ensures alarm can be transformed into a JSON String so that it can be sent to Cumulocity
+NOTE: You do not need to use this method. It is called implicitly when using the <a href="#">AlarmsService post</a> or
+<a href="#">AlarmsService put</a> method</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

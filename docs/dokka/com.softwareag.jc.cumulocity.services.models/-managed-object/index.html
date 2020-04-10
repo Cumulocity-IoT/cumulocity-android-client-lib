@@ -1,0 +1,261 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ManagedObject - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.models</a>&nbsp;/&nbsp;<a href="./index.html">ManagedObject</a><br/>
+<br/>
+<h1>ManagedObject</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">ManagedObject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../com.softwareag.jc.cumulocity.services.models.extension/-properties-base/index.html"><span class="identifier">PropertiesBase</span></a><span class="symbol">, </span><span class="identifier">JsonSerializable</span></code>
+<p>This is the single most important asset type referenced by Cumulocity. Principally identifies the
+devices to be managed, but can be used to define any required asset type, such as groups, buildings,
+rooms etc. etc.</p>
+<p>It's formal definition is given in the <a href="https://cumulocity.com/guides/reference/manageObjects/#managedObject">Cumulocity REST API Guide</a></p>
+<p><em>Customisation</em></p>
+<p>ManagedObject's can be easily enriched with custom attributes, however this is problematic for a
+typed language such as Kotlin or Java. In this implementation custom attributes are added to a
+properties attribute of ManagedObject and identified by the name of the value. Complex structures
+are flattened into a single key/value pair
+e.g.</p>
+<pre><code>{
+ "my_custom_structure": {
+     "name": "this is an example"
+     "sub_elements": {
+             "value": "Can have as many sub-levels as you want"
+         }
+     }
+ }
+</code></pre>
+<p>becomes</p>
+<pre><code>properties["my_custom_structure.name"] == "this is an example"
+properties["my_custom_structure.name"] == "this is an example"
+properties["my_custom_structure.sub_elements.value"] == "Can have as many sub-levels as you want"
+</code></pre>
+<p>You can also add single custom attributes to <a href="./index.html">ManagedObject</a> and reference them too, however they
+have to be prefaced with 'x' in order to be included
+e.g.</p>
+<pre><code>{
+ "xMy_Custom_value": "123456"
+}
+</code></pre>
+<p>becomes</p>
+<pre><code>properties["xMy_Custom_value"] == "this is an example"
+</code></pre>
+<p>The above is required because there is no formal description available for a <a href="#">ManageObject</a> and
+hence no way to formally distinguish between standard and custom attributes, hence the 'x'</p>
+<p>This could put forward the argument that all custom values should be placed in complex structure
+as above. Unfortunately this is not always possible, due to the fact that only simple top level
+custom attributes can be included in Cumulocity dashboards.</p>
+<p>You can also register your own classes to replace the flattened structure with a proper object
+representation if you wish. Refer to the documentation for <a href="../../com.softwareag.jc.cumulocity.services.models.extension/-properties-base/index.html">PropertiesBase</a> for details.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ManagedObject</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Position, kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Position, kotlin.String)/serialNumber">serialNumber</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Position, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Position, kotlin.String)/supplier">supplier</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Position, kotlin.String)/model">model</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Position, kotlin.String)/revision">revision</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Position, kotlin.String)/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Position, kotlin.String)/subType">subType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Position, kotlin.String)/location">location</span><span class="symbol">:</span>&nbsp;<a href="../-position/index.html"><span class="identifier">Position</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String, com.softwareag.jc.cumulocity.services.models.Position, kotlin.String)/notes">notes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">ManagedObject</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(kotlin.String, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(kotlin.String, kotlin.String)/notes">notes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span></code>
+<p>Creates new ManageObject to be posted to Cumlocity via <a href="#">ManageObjectService</a></p>
+<code><span class="identifier">ManagedObject</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$<init>(org.json.JSONObject)/o">o</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">?</span><span class="symbol">)</span></code>
+<p>This is the single most important asset type referenced by Cumulocity. Principally identifies the
+devices to be managed, but can be used to define any required asset type, such as groups, buildings,
+rooms etc. etc.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="app-id.html">appId</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">appId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="app-owner.html">appOwner</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">appOwner</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="c8y_-active-alarms-status.html">c8y_ActiveAlarmsStatus</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">c8y_ActiveAlarmsStatus</span><span class="symbol">: </span><a href="../-alarms/index.html"><span class="identifier">Alarms</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="c8y_-availability.html">c8y_Availability</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">c8y_Availability</span><span class="symbol">: </span><a href="../-availability/index.html"><span class="identifier">Availability</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="c8y_-connnection-status.html">c8y_ConnnectionStatus</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">c8y_ConnnectionStatus</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="c8y_-data-point.html">c8y_DataPoint</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">c8y_DataPoint</span><span class="symbol">: </span><a href="../-data-points/index.html"><span class="identifier">DataPoints</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="c8y_-firmware.html">c8y_Firmware</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">c8y_Firmware</span><span class="symbol">: </span><a href="../-firmware/index.html"><span class="identifier">Firmware</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="c8y_-hardware.html">c8y_Hardware</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">c8y_Hardware</span><span class="symbol">: </span><a href="../-hardware/index.html"><span class="identifier">Hardware</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="c8y_-notes.html">c8y_Notes</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">c8y_Notes</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="c8y_-position.html">c8y_Position</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">c8y_Position</span><span class="symbol">: </span><a href="../-position/index.html"><span class="identifier">Position</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="c8y_-required-availability.html">c8y_RequiredAvailability</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">c8y_RequiredAvailability</span><span class="symbol">: </span><a href="../-required-availability/index.html"><span class="identifier">RequiredAvailability</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="c8y_-supported-operations.html">c8y_SupportedOperations</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">c8y_SupportedOperations</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="created-date.html">createdDate</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">createdDate</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="id.html">id</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">id</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-l-p-w-a-n-provisioned.html">isLPWANProvisioned</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">isLPWANProvisioned</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="l-n-s-type.html">lNSType</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">lNSType</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="name.html">name</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">name</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="owner.html">owner</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">owner</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="sub-type.html">subType</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">subType</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="type.html">type</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">type</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="updated-date.html">updatedDate</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">updatedDate</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../com.softwareag.jc.cumulocity.services.models.extension/-properties-base/properties.html">properties</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">properties</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-hash-map/index.html"><span class="identifier">HashMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Collection of any custom attributes found in the ManageObject structure</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="to-j-s-o-n-string.html">toJSONString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toJSONString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="update-id.html">updateId</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">updateId</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.ManagedObject$updateId(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Updates the internal id with that of the paramter, used internally to set the id of a newly
+posted ManageObject with the new id returned from Cumulocity</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

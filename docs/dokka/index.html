@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Cumulocity API Services</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="./index.html">Cumulocity API Services</a><br/>
+<br/>
+<p><strong>Author</strong> John Carter,
+<strong>Date</strong> March 2020,
+<strong>version</strong> 1.0,</p>
+<p>Android v28 Kotlin developed library (.aar) giving access to Cumulocity via its REST API. Use this
+library when developing Android apps to access your back-end Cumlocity tenant.</p>
+<p>Refer to this <a href="https://cumulocity.com/guides/reference/rest-implementation">Cumulocity Developer Reference Site</a>
+for more information on the underlying API implementation.</p>
+<p>Access the different Cumulocity assets using the service classes defined in the package <a href="com.softwareag.jc.cumulocity.services.api/index.html">com.softwareag.jc.cumulocity.services.api</a>
+and interrogate the results via objects defined by classes in the <a href="com.softwareag.jc.cumulocity.services.models/index.html">com.softwareag.jc.cumulocity.services.models</a>
+package.</p>
+<p> e.g.</p>
+<pre><code class="lang-kotlin">    CumulocityConnectionFactory.connection(&lt;tenant&gt;, &lt;instance e.g. cumulocity.com&gt;).connect(&lt;user&gt;, &lt;password&gt;) { connection, responseInfo -&gt;
+
+       ManagedObjectsService(connection).managedObjectsForType(0, "c8y_DeviceGroup") { results -&gt;
+
+           val status: Int = results.status
+
+           val failureReason: String? = if (status == 500)
+               results.reason
+           else
+               null
+
+           val objects: List&lt;ManagedObject&gt; = results.content
+       }
+   }
+</code></pre>
+<p>   Connections can be reused, but services should not be reused and are not thread-safe, hence
+   should not be used in parallel by different threads.</p>
+<p>  <em>Assets Types</em></p>
+<p>  Classes exist for all major assets types; <a href="com.softwareag.jc.cumulocity.services.models/-managed-object/index.html">ManagedObject</a>, <a href="com.softwareag.jc.cumulocity.services.models/-alarm/index.html">Alarm</a>, <a href="#">Binary</a>, <a href="com.softwareag.jc.cumulocity.services.models/-data-points/index.html">DataPoints</a>, <a href="com.softwareag.jc.cumulocity.services.models/-event/index.html">Event</a>,
+  <a href="com.softwareag.jc.cumulocity.services.models/-measurement/index.html">Measurement</a>, <a href="com.softwareag.jc.cumulocity.services.models/-operation/index.html">Operation</a> and <a href="com.softwareag.jc.cumulocity.services.models/-user/index.html">User</a></p>
+<p>  <em>API Services</em></p>
+<p>  To retrieve these assets use one of the api service classes in the <a href="#">api</a> package such as
+  <a href="com.softwareag.jc.cumulocity.services.api/-managed-objects-service/index.html">ManagedObjectsService</a>, <a href="com.softwareag.jc.cumulocity.services.api/-managed-object-service/index.html">ManagedObjectService</a>, <a href="com.softwareag.jc.cumulocity.services.api/-alarms-service/index.html">AlarmsService</a>, <a href="com.softwareag.jc.cumulocity.services.api/-events-service/index.html">EventsService</a>,
+  <a href="com.softwareag.jc.cumulocity.services.api/-measurements-service/index.html">MeasurementsService</a> etc.</p>
+<h3>Packages</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="com.softwareag.jc.cumulocity.apiservices/index.html">com.softwareag.jc.cumulocity.apiservices</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="com.softwareag.jc.cumulocity.services.api/index.html">com.softwareag.jc.cumulocity.services.api</a></p>
+</td>
+<td>
+<p>Query/update Cumulocity assets via well defined classes</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="com.softwareag.jc.cumulocity.services.models/index.html">com.softwareag.jc.cumulocity.services.models</a></p>
+</td>
+<td>
+<p>Classes defining the model for all of the cumulocity asset types.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="com.softwareag.jc.cumulocity.services.models.extension/index.html">com.softwareag.jc.cumulocity.services.models.extension</a></p>
+</td>
+<td>
+<p>Represents a custom structure added to your Cumulocity Managed Object instances</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Index</h3>
+<a href="alltypes/index.html">All Types</a>
+</BODY>
+</HTML>

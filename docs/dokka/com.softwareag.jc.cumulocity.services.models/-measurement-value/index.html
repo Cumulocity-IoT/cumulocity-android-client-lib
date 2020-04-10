@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MeasurementValue - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.models</a>&nbsp;/&nbsp;<a href="./index.html">MeasurementValue</a><br/>
+<br/>
+<h1>MeasurementValue</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">MeasurementValue</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Individual measurement consisting of a human readable label, its unit of measure and the value</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-value-holder/index.html">ValueHolder</a></p>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">ValueHolder</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MeasurementValue</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementValue$<init>(org.json.JSONObject)/o">o</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">MeasurementValue</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementValue$<init>(kotlin.String, kotlin.String, kotlin.Number)/label">label</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementValue$<init>(kotlin.String, kotlin.String, kotlin.Number)/unit">unit</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementValue$<init>(kotlin.String, kotlin.String, kotlin.Number)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/index.html"><span class="identifier">Number</span></a><span class="symbol">)</span></code><code><span class="identifier">MeasurementValue</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementValue$<init>(kotlin.String, com.softwareag.jc.cumulocity.services.models.MeasurementValue.ValueHolder)/label">label</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementValue$<init>(kotlin.String, com.softwareag.jc.cumulocity.services.models.MeasurementValue.ValueHolder)/value">value</span><span class="symbol">:</span>&nbsp;<a href="-value-holder/index.html"><span class="identifier">MeasurementValue.ValueHolder</span></a><span class="symbol">)</span></code>
+<p>Individual measurement consisting of a human readable label, its unit of measure and the value</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="label.html">label</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">label</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="value.html">value</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">value</span><span class="symbol">: </span><a href="-value-holder/index.html"><span class="identifier">MeasurementValue.ValueHolder</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="to-j-s-o-n-string.html">toJSONString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toJSONString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="capture-value.html">captureValue</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">captureValue</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementValue.Companion$captureValue(org.json.JSONObject)/o">o</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">)</span><span class="symbol">: </span><a href="-value-holder/index.html"><span class="identifier">MeasurementValue.ValueHolder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="label.html">label</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">label</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.MeasurementValue.Companion$label(org.json.JSONObject)/o">o</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

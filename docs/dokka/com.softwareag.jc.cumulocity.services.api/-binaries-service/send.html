@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BinariesService.send - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.api</a>&nbsp;/&nbsp;<a href="index.html">BinariesService</a>&nbsp;/&nbsp;<a href="./send.html">send</a><br/>
+<br/>
+<h1>send</h1>
+<a name="com.softwareag.jc.cumulocity.services.api.BinariesService$send(kotlin.String, kotlin.String, kotlin.ByteArray, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.api.BinariesService.Attachment)), kotlin.Unit)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">send</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.BinariesService$send(kotlin.String, kotlin.String, kotlin.ByteArray, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.api.BinariesService.Attachment)), kotlin.Unit)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.BinariesService$send(kotlin.String, kotlin.String, kotlin.ByteArray, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.api.BinariesService.Attachment)), kotlin.Unit)))/contentType">contentType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.BinariesService$send(kotlin.String, kotlin.String, kotlin.ByteArray, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.api.BinariesService.Attachment)), kotlin.Unit)))/content">content</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.BinariesService$send(kotlin.String, kotlin.String, kotlin.ByteArray, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.api.BinariesService.Attachment)), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">Response</span><span class="symbol">&lt;</span><a href="-attachment/index.html"><span class="identifier">BinariesService.Attachment</span></a><span class="symbol">&gt;</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sends the file to Cumulocity to be stored</p>
+<h3>Parameters</h3>
+<p><a name="name"></a>
+<code>name</code> - label of the file to be shown in Cumulocity -&gt; Administration
+-&gt; Management -&gt; File Repository</p>
+<p><a name="contentType"></a>
+<code>contentType</code> - content type representing the type of data to be stored</p>
+<p><a name="content"></a>
+<code>content</code> - ByteArray representing rawe data to be stored</p>
+<p><a name="responder"></a>
+<code>responder</code> - Callback function to be called with response from Cumulocity, principally
+the internal id of the newly stored file</p>
+</BODY>
+</HTML>

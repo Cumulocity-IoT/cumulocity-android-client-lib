@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PropertiesBase.registerCustomAttributeClass - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.models.extension</a>&nbsp;/&nbsp;<a href="index.html">PropertiesBase</a>&nbsp;/&nbsp;<a href="./register-custom-attribute-class.html">registerCustomAttributeClass</a><br/>
+<br/>
+<h1>registerCustomAttributeClass</h1>
+<a name="com.softwareag.jc.cumulocity.services.models.extension.PropertiesBase.Companion$registerCustomAttributeClass(kotlin.String, kotlin.String)"></a>
+<code><span class="keyword">fun </span><span class="identifier">registerCustomAttributeClass</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.extension.PropertiesBase.Companion$registerCustomAttributeClass(kotlin.String, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.extension.PropertiesBase.Companion$registerCustomAttributeClass(kotlin.String, kotlin.String)/namespaceForPackageAndClass">namespaceForPackageAndClass</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Allows you to register your own custom classes to manage custom structures found in
+Cumulocity assets.</p>
+<h3>Parameters</h3>
+<p><a name="name"></a>
+<code>name</code> - Must match the name of the complex structure referenced by the JSON object
+returned by Cumulocity. Alternatively if you want to use this to encapsulate simple values,
+specify a prefix. The first value found starting with this prefix call the constructor of
+your class providing the JSONObject containing the custom attribute. Prefix must start
+with 'x' e.g. 'xPlanning'</p>
+<p><a name="namespaceForPackageAndClass"></a>
+<code>namespaceForPackageAndClass</code> - full namespace of your class including its package location
+Your class must provide a constructor that take a single JSONObject parameter.</p>
+</BODY>
+</HTML>

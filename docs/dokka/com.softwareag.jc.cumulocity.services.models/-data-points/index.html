@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DataPoints - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.models</a>&nbsp;/&nbsp;<a href="./index.html">DataPoints</a><br/>
+<br/>
+<h1>DataPoints</h1>
+<code><span class="keyword">class </span><span class="identifier">DataPoints</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Represents a set of DataPoints for a <a href="../-managed-object/index.html">ManagedObject</a>, which allows measurements captured by
+Cumulocity to be displayed more intuitively by prefacing them with unit labels, line colors etc.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-value/index.html">Value</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Value</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JsonSerializable</span></code>
+<p>Represents a single DataPoint value</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">DataPoints</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.models.DataPoints$<init>(org.json.JSONObject)/o">o</span><span class="symbol">:</span>&nbsp;<span class="identifier">JSONObject</span><span class="symbol">)</span></code>
+<p>Alternative constructor to allow JSON string representation to be converted to object
+You do not need to use this method, called implicitly by the <a href="#">ManagedObjectService</a> class
+when fetching <a href="../-managed-object/index.html">ManagedObject</a>s from Cumulocity</p>
+<code><span class="identifier">DataPoints</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Creates a new empty DataPoints holder</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="values.html">values</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">values</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="-value/index.html"><span class="identifier">DataPoints.Value</span></a><span class="symbol">&gt;</span></code>
+<p>Groups the data points by key</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="to-j-s-o-n-string.html">toJSONString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toJSONString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Allows this object type to converted to a JSON String
+You do not need to use this method directly, instead use the <a href="#">ManagedObjectService</a> class</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

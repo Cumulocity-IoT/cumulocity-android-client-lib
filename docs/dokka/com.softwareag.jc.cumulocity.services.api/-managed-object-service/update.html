@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ManagedObjectService.update - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.api</a>&nbsp;/&nbsp;<a href="index.html">ManagedObjectService</a>&nbsp;/&nbsp;<a href="./update.html">update</a><br/>
+<br/>
+<h1>update</h1>
+<a name="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$update(com.softwareag.jc.cumulocity.services.models.ManagedObject, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$update(com.softwareag.jc.cumulocity.services.models.ManagedObject, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/obj">obj</span><span class="symbol">:</span>&nbsp;<a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ManagedObjectService$update(com.softwareag.jc.cumulocity.services.models.ManagedObject, kotlin.Function1((com.softwareag.jc.common.api.Response((com.softwareag.jc.cumulocity.services.models.ManagedObject)), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html"><span class="identifier">ManagedObject</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Updates the existing managed object. The id attribute must be provided in advance, it is
+recommended that you only use this method with a managed object that was returned by the
+aforementioned <a href="add.html">add</a> method, <a href="get.html">get</a> or query methods provided by the <a href="../-managed-objects-service/index.html">ManagedObjectsService</a> class.</p>
+<p>Note, not all elements of your managed object can be posted, refer to the <a href="https://cumulocity.com/guides/reference/inventory/#managed-object">REST API Guide</a>
+for more details</p>
+<h3>Parameters</h3>
+<p><a name="obj"></a>
+<code>obj</code> - a <a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html">ManagedObject</a> for which the id attribute IS NOT null</p>
+<p><a name="responder"></a>
+<code>responder</code> - callback function to which the RequestResponder&lt;<a href="../../com.softwareag.jc.cumulocity.services.models/-managed-object/index.html">ManagedObject</a>&gt; instance
+will be communicated to.</p>
+</BODY>
+</HTML>

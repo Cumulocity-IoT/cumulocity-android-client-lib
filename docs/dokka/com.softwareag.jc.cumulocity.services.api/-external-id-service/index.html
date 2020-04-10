@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ExternalIdService - Cumulocity API Services</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">Cumulocity API Services</a>&nbsp;/&nbsp;<a href="../index.html">com.softwareag.jc.cumulocity.services.api</a>&nbsp;/&nbsp;<a href="./index.html">ExternalIdService</a><br/>
+<br/>
+<h1>ExternalIdService</h1>
+<code><span class="keyword">class </span><span class="identifier">ExternalIdService</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConnectionRequest</span><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-user/index.html"><span class="identifier">User</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-external-id/index.html"><span class="identifier">ExternalId</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Allows lookup of external id's associated with <a href="#">ManageObject</a>s</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ExternalIdService</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ExternalIdService$<init>(com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory.CumulocityConnection)/connection">connection</span><span class="symbol">:</span>&nbsp;<a href="../-cumulocity-connection-factory/-cumulocity-connection/index.html"><span class="identifier">CumulocityConnectionFactory.CumulocityConnection</span></a><span class="symbol">)</span></code>
+<p>Allows lookup of external id's associated with <a href="#">ManageObject</a>s</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="last-page.html">lastPage</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">lastPage</span><span class="symbol">: </span><a href="../../com.softwareag.jc.cumulocity.services.models/-external-ids/index.html"><span class="identifier">ExternalIds</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="all-managed-object.html">allManagedObject</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">allManagedObject</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ExternalIdService$allManagedObject(kotlin.Int, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ExternalId)))), kotlin.Unit)))/pageNum">pageNum</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ExternalIdService$allManagedObject(kotlin.Int, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ExternalId)))), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-external-id/index.html"><span class="identifier">ExternalId</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="external-i-ds-for-managed-object.html">externalIDsForManagedObject</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">externalIDsForManagedObject</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ExternalIdService$externalIDsForManagedObject(kotlin.Int, kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ExternalId)))), kotlin.Unit)))/pageNum">pageNum</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ExternalIdService$externalIDsForManagedObject(kotlin.Int, kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ExternalId)))), kotlin.Unit)))/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ExternalIdService$externalIDsForManagedObject(kotlin.Int, kotlin.String, kotlin.Function1((com.softwareag.jc.common.api.Response((kotlin.collections.List((com.softwareag.jc.cumulocity.services.models.ExternalId)))), kotlin.Unit)))/responder">responder</span><span class="symbol">:</span>&nbsp;<span class="identifier">RequestResponder</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-external-id/index.html"><span class="identifier">ExternalId</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="path.html">path</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">path</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="register-external-i-ds-for-managed-object.html">registerExternalIDsForManagedObject</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">registerExternalIDsForManagedObject</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ExternalIdService$registerExternalIDsForManagedObject(kotlin.String, kotlin.String, kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ExternalIdService$registerExternalIDsForManagedObject(kotlin.String, kotlin.String, kotlin.String)/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ExternalIdService$registerExternalIDsForManagedObject(kotlin.String, kotlin.String, kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Register an external id for an existing <a href="#">ManagedObject</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="response.html">response</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">response</span><span class="symbol">(</span><span class="identifier" id="com.softwareag.jc.cumulocity.services.api.ExternalIdService$response(kotlin.String)/response">response</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.softwareag.jc.cumulocity.services.models/-external-id/index.html"><span class="identifier">ExternalId</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
