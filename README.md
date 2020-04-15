@@ -1,7 +1,7 @@
 
 # Android Cumulocity Client Library
 
-Android client library for the Cumulocity API.
+Android client library (v.28+ PIE) for the Cumulocity API.
 
 ## Installation
 
