@@ -72,7 +72,7 @@ const val JC_MANAGED_OBJECT_IS_VERIFIED_DATE = "xIsVerifiedDate"
 
 // END OF CUSTOM FIELDS
 
-class IsDeviceType(): JsonSerializable {
+class IsDeviceType: JsonSerializable {
 
     override fun toJSONString(): String {
 
@@ -90,7 +90,8 @@ data class Alarms(var critical: Int = 0, var major: Int = 0, var minor: Int = 0,
 /**
  * Firmware of device represented by [ManagedObject]
  */
-data class Firmware(val version: String): JsonSerializable {
+data class Firmware(val version: String):
+    JsonSerializable {
 
     override fun toJSONString(): String {
 
@@ -151,7 +152,8 @@ data class Position(val lng: Double, val lat: Double, val alt: Double?):
 /**
  * Collection of properties to identify the device type
  */
-class Hardware(json: JSONObject?): PropertiesBase(json, false), JsonSerializable {
+class Hardware(json: JSONObject?): PropertiesBase(json, false),
+    JsonSerializable {
 
     private var _serialNumber: String? = null
     private var _model: String? = null
@@ -219,7 +221,7 @@ class Hardware(json: JSONObject?): PropertiesBase(json, false), JsonSerializable
  * devices to be managed, but can be used to define any required asset type, such as groups, buildings,
  * rooms etc. etc.
  *
- * It's formal definition is given in the [Cumulocity REST API Guide](https://cumulocity.com/guides/reference/manageObjects/#managedObject)
+ * It's formal definition is given in the [Cumulocity REST API Guide](https://cumulocity.com/guides/reference/inventory/#managed-object)
 
  *
  * _Customisation_
@@ -307,6 +309,8 @@ data class ManagedObject(private val o: JSONObject?): PropertiesBase(o, true), J
     var c8y_SupportedOperations: List<String> = ArrayList()
     var c8y_DataPoint: DataPoints = DataPoints()
     val c8y_ActiveAlarmsStatus: Alarms = Alarms(0, 0, 0, 0)
+
+    var c8y_IsDevice: IsDeviceType? = null
 
     var c8y_Notes: String? = null
 
@@ -502,7 +506,7 @@ data class ManagedObject(private val o: JSONObject?): PropertiesBase(o, true), J
     }
 
     /**
-     * Creates new ManageObject to be posted to Cumlocity via [ManageObjectService]
+     * Creates new ManageObject to be posted to Cumulocity via [ManageObjectService]
      */
     constructor(name: String?, notes: String?):this(null) {
 
@@ -511,7 +515,7 @@ data class ManagedObject(private val o: JSONObject?): PropertiesBase(o, true), J
     }
 
     /**
-     * Updates the internal id with that of the paramter, used internally to set the id of a newly
+     * Updates the internal id with that of the parameter, used internally to set the id of a newly
      * posted ManageObject with the new id returned from Cumulocity
      */
     fun updateId(id: String) {

@@ -25,7 +25,8 @@ const val C8Y_ALARM_TEXT = "text"
  * @property severity One of Critical, Major, Minor or Warning
  * @property text arbitrary label describing reason for alarm
  */
-data class Alarm(val source: Source, val type: String, val status: Status, val severity: Severity, val text: String): JsonSerializable {
+data class Alarm(val source: Source, val type: String, val status: Status, val severity: Severity, val text: String):
+    JsonSerializable {
 
     /**
      * Allowed values for Alarm Status
@@ -58,7 +59,8 @@ data class Alarm(val source: Source, val type: String, val status: Status, val s
     /**
      * Wraps id to identify associated device
      */
-    data class Source(val id: String): JsonSerializable {
+    data class Source(val id: String):
+        JsonSerializable {
 
         override fun toJSONString(): String {
 

@@ -17,7 +17,8 @@ const val C8Y_OPERATIONS_DEVICE_ID = "deviceId"
  *
  * @constructor Create a new operation associated with given device via its [ManagedObject] id
  */
-class Operation(val deviceId: String, val type: String, val operationDetails: OperationDetails): JsonSerializable {
+class Operation(val deviceId: String, val type: String, val operationDetails: OperationDetails):
+    JsonSerializable {
 
     enum class Status {
         SUCCESSFUL,
@@ -76,7 +77,8 @@ class Operation(val deviceId: String, val type: String, val operationDetails: Op
         return JsonSerializable.toJSONString(this)
     }
 
-    data class OperationDetails(val name: String, val parameters:  Map<String, String>): JsonSerializable {
+    data class OperationDetails(val name: String, val parameters:  Map<String, String>):
+        JsonSerializable {
 
         override fun toJSONString(): kotlin.String {
             return JsonSerializable.toJSONString(this)

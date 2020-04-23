@@ -12,7 +12,8 @@ const val C8Y_MESUREMENT_VALUE_VALUE = "value"
  */
 data class MeasurementValue(val label: String, val value: ValueHolder): JsonSerializable {
 
-    data class ValueHolder(val unit: String?, val value: Number): JsonSerializable {
+    data class ValueHolder(val unit: String?, val value: Number):
+        JsonSerializable {
 
         constructor(o: JSONObject): this(unit(o), o.get(C8Y_MESUREMENT_VALUE_VALUE) as Number)
 

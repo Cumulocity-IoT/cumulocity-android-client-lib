@@ -20,9 +20,11 @@ const val C8Y_MESUREMENT_TIME = "time"
  *
  * @constructor allows a new measurement to be created (Use prior to calling [MeasurementsService]
  */
-data class Measurement(val source: Source, val type: String): JsonSerializable {
+data class Measurement(val source: Source, val type: String):
+    JsonSerializable {
 
-    data class Source(val id: String): JsonSerializable {
+    data class Source(val id: String):
+        JsonSerializable {
 
         override fun toJSONString(): String {
 

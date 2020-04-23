@@ -22,9 +22,11 @@ const val C8Y_EVENT_TIME = "time"
  * @param type label to allow events to be grouped/typed
  * @param text arbritary text describing event
  */
-data class Event(val source: Source, val type: String, val text: String): JsonSerializable {
+data class Event(val source: Source, val type: String, val text: String):
+    JsonSerializable {
 
-    data class Source(val id: String): JsonSerializable {
+    data class Source(val id: String):
+        JsonSerializable {
 
         override fun toJSONString(): String {
 
@@ -130,7 +132,8 @@ data class Event(val source: Source, val type: String, val text: String): JsonSe
         }
     }
 
-    class AnyEventValue(o: Any): HashMap<String, Any>(), JsonSerializable {
+    class AnyEventValue(o: Any): HashMap<String, Any>(),
+        JsonSerializable {
 
         override fun toJSONString(): String {
             return JsonSerializable.toJSONString(this)

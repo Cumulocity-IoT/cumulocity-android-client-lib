@@ -59,7 +59,8 @@ class CumulocityConnectionFactory: ConnectionFactory<User>() {
      * @param credentials: Credentials the user/password used in the call to connect()
      * @param headers: Map<String, String> The headers returned by the call to connect()
      */
-    interface CumulocityConnection: Connection<User> {
+    interface CumulocityConnection:
+        Connection<User> {
 
         /**
          * User profile returned by Cumulocity for the given connection

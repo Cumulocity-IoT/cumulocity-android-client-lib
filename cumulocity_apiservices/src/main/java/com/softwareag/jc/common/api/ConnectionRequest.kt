@@ -113,6 +113,7 @@ abstract class ConnectionRequest<C,T>(open val connection: Connection<C>): Async
             }
 
             if (body != null) {
+                conn.doOutput = true
                 request(conn, body)
             }
 

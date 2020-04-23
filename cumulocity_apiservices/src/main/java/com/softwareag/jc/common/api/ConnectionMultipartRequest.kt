@@ -44,8 +44,7 @@ abstract class ConnectionMultipartRequest<C,ByteArray>(open val connection: Conn
 
         _method = method
         _delegate = responder
-        _contentType =
-            JC_MULTIPART_CONTENT_TYPE
+        _contentType = JC_MULTIPART_CONTENT_TYPE
         _body = request
 
         return super.execute()

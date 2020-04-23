@@ -11,7 +11,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/cumulocity_apiservices" />
-            <option value="$PROJECT_DIR$/jc_common" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

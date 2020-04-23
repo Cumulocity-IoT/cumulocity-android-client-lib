@@ -29,10 +29,10 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-task dokka_postBuild {
+/*task dokka_postBuild {
     exec {
-        executable "./cumulocity_apiservices/addHeaderFooterToDokkaOutput.sh"
+       executable "./cumulocity_apiservices/addHeaderFooterToDokkaOutput.sh"
     }
 }
 
-//dokka.doLast(dokka_postBuild)
+dokka.doLast(dokka_postBuild)*/

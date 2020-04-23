@@ -1,6 +1,8 @@
 package com.softwareag.jc.common.kotlin.extensions
 
+import android.util.Log
 import com.softwareag.jc.common.kotlin.extensions.DateTools.Companion.dateToISO861
+import com.softwareag.jc.cumulocity.services.models.extension.PropertiesBase
 import java.lang.StringBuilder
 import java.lang.reflect.Method
 import java.util.*
@@ -33,7 +35,7 @@ interface JsonSerializable {
 
             val methods: Array<Method> = o.javaClass.declaredMethods
 
-            val builder: StringBuilder = StringBuilder()
+            val builder = StringBuilder()
 
             builder.append("{")
             methods.forEach { m ->
@@ -46,23 +48,19 @@ interface JsonSerializable {
                     if (k.indexOf(".") != -1)
                         k = k.substring(k.lastIndexOf(".")+1)
 
-                    //Log.i("debug", "public - ${k}")
+                    Log.i("debug", "public - ${k}")
 
-                    _keyValuePairToJSONString(
-                        k,
-                        v,
-                        builder
-                    )
+                    _keyValuePairToJSONString(k, v, builder)
                 }
             }
 
-            /*if (o is PropertiesBase) {
+            if (o is PropertiesBase) {
                 // add custom props too
 
                 (o as PropertiesBase).properties.forEach { (k, v) ->
                     _keyValuePairToJSONString(k, v, builder)
                 }
-            }*/
+            }
 
             if (builder.endsWith(","))
                 builder.deleteCharAt(builder.length-1)
@@ -105,16 +103,9 @@ interface JsonSerializable {
                             builder.append((v as JsonSerializable).toJSONString()).append(",")
                         }
                     }
-
-                    //if (builder.endsWith(","))
-                    //    builder.deleteCharAt(builder.length-1)
                 }
                 else {
-                    _toJSONString(
-                        k,
-                        v,
-                        builder
-                    )
+                    _toJSONString(k, v, builder)
                 }
             }
         }

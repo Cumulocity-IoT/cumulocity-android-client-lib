@@ -1,9 +1,7 @@
 package com.softwareag.jc.cumulocity.apiservices
 
 import com.softwareag.jc.common.api.Response
-import com.softwareag.jc.cumulocity.services.api.CumulocityConnection
 import com.softwareag.jc.cumulocity.services.api.CumulocityConnectionFactory
-import com.softwareag.jc.cumulocity.services.api.ManagedObjectService
 import com.softwareag.jc.cumulocity.services.api.ManagedObjectsService
 import com.softwareag.jc.cumulocity.services.models.ManagedObject
 import com.softwareag.jc.cumulocity.services.models.ManagedObjectQuery
@@ -28,7 +26,7 @@ class ManagedObjectsServiceUnitTest {
     @Test
     fun testGetManagedObjectGroups() {
 
-        CumulocityConnectionFactory.connection("frpresales", "cumulocity.com").connect("john", "6pmJp73FaKS9") { c, r ->
+        CumulocityConnectionFactory.connection("", "cumulocity.com").connect("", "") { c, r ->
 
             ManagedObjectsService(c).managedObjectsForType(0, "c8y_DeviceGroup") {
 
@@ -46,7 +44,7 @@ class ManagedObjectsServiceUnitTest {
     @Test
     fun testGetManagedObjectsForQuery() {
 
-        CumulocityConnectionFactory.connection("frpresales", "cumulocity.com").connect("john", "6pmJp73FaKS9") { c, r ->
+        CumulocityConnectionFactory.connection("", "cumulocity.com").connect("", "") { c, r ->
 
             ManagedObjectsService(c).managedObjectsForQuery(0, ManagedObjectQuery().add("bygroupid", null, "15718501")) {
 

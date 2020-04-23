@@ -70,27 +70,30 @@ class BinariesService(connection: CumulocityConnectionFactory.CumulocityConnecti
      * @param name label of the file to be shown in Cumulocity -> Administration
      * -> Management -> File Repository
      * @param contentType content type representing the type of data to be stored
-     * @param content  ByteArray representing rawe data to be stored
+     * @param content  ByteArray representing raw data to be stored
      * @param responder Callback function to be called with response from Cumulocity, principally
      * the internal id of the newly stored file
      */
     fun send(name: String, contentType: String, content: ByteArray, responder: (Response<Attachment>) -> Unit) {
 
         val request: ArrayList<ContentPart> = ArrayList()
-        val contentPartObject: ContentPart = ContentPart(
+        val contentPartObject: ContentPart =
+            ContentPart(
                 "$C8Y_BINARIES_OBJECT", null, null, ("{\n" +
                         "  \"$C8Y_BINARIES_NAME\":\"$name\",\n" +
                         "  \"$C8Y_BINARIES_TYPE\":\"$contentType\"\n" + "}").toByteArray()
             )
 
-        val contentPartFileSize: ContentPart = ContentPart(
+        val contentPartFileSize: ContentPart =
+            ContentPart(
                 "$C8Y_BINARIES_FILE_SIZE",
                 null,
                 null,
                 "${content.size}".toByteArray()
             )
 
-        val contentPartFile: ContentPart = ContentPart(
+        val contentPartFile: ContentPart =
+            ContentPart(
                 "$C8Y_BINARIES_FILE",
                 name,
                 contentType,
@@ -116,7 +119,8 @@ class BinariesService(connection: CumulocityConnectionFactory.CumulocityConnecti
         }
     }
 
-    inner class ResponseImpl(private val r: Response<ByteArray>): Response<Attachment> {
+    inner class ResponseImpl(private val r: Response<ByteArray>):
+        Response<Attachment> {
 
         private var _attachment: Attachment? = null
 
