@@ -1,3 +1,4 @@
+# !!! Archived -- this repository is archived and currently not actively maintained!
 
 # Android Cumulocity Client Library
 
